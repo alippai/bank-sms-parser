@@ -46,6 +46,7 @@ const shopping = [
     'GREEN PAPIR',
     'KREATIV HOBBY ',
     'IKEA',
+    'OBI',
     'MEDIA MARKT',
     'INMEDIO ',
     'BESTON-OTTHON',
