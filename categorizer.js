@@ -21,6 +21,7 @@ const utilities = [
 ];
 const clothing = [
     'ZARA ',
+    'ZARA.',
     'TIZPRBA ',
     'PULL ',
     'H&M',
