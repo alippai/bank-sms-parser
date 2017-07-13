@@ -85,9 +85,7 @@ const restaurant = [
   'MOST) BISZTR',
 ];
 
-function categoryMatch(category, entry) {
-  return category.some(token => entry.message.toLowerCase().includes(token.toLowerCase()))
-}
+const categoryMatch = (category, entry) => category.some(token => entry.message.toLowerCase().includes(token.toLowerCase()));
 
 export default function (entry) {
   if (categoryMatch(groceries, entry)) entry.category = 'Groceries';
