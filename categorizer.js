@@ -20,6 +20,8 @@ const utilities = [
   'Partner NAV Illetékek ',
   'BANKKàRTYàVAL KAPCS. DIJ',
   'SÉF ASZTALA',
+  'FIDO',
+  'Dropbox',
 ];
 const clothing = [
   'ZARA ',
@@ -34,6 +36,8 @@ const clothing = [
   'DECATHLON',
   'CALZEDONIA',
   'TEZENIS',
+  'Humanic',
+  'DRESSMANN',
 ];
 const shopping = [
   'PAYPAL',
@@ -55,13 +59,14 @@ const shopping = [
   'JYSK ',
   'BUDAPEST KIRàLY U.52.',
   'EMAG.HU',
+  'WWW.EDIGITAL.HU',
 ];
-const sports = [ 'Speed-Way', 'ALPINBIKE' ];
-const travel = ['M?V', 'Máv ', 'MàV'];
-const entertainment = ['CINEMA CITY', 'INTERTICKET '];
+const sports = [ 'Speed-Way', 'ALPINBIKE', 'Radwelt' ];
+const travel = ['M?V', 'Máv ', 'MàV', 'Lokalbah', 'MINIBUD'];
+const entertainment = ['CINEMA CITY', 'INTERTICKET ', 'Spotify', 'cinemacity'];
 const travel_savings = ['Közl UTAZàS'];
 const safety_savings = ['Közl BIZTONSàG'];
-const personal_care = ['ROSSMANN ', 'DM ', 'Mueller ', 'Harmonia Reformhaz', 'DOUGLAS ', 'TINAMU '];
+const personal_care = ['ROSSMANN ', 'DM ', 'Mueller ', 'Harmonia Reformhaz', 'DOUGLAS ', 'TINAMU ', 'BARBER SHOP'];
 const restaurant = [
   'AMBER',
   'Madal Cafe',
@@ -83,6 +88,12 @@ const restaurant = [
   'SOTE NET',
   'ZING BURGER',
   'MOST) BISZTR',
+  'This is Melbourne',
+  'STOCZEK ETTEREM',
+  'INFO I ÉTTEREM',
+  'SZENDVICS DELIKAT KFT.',
+  'CAFE FREI',
+  'COSTA COFFEE',
 ];
 
 const categoryMatch = (category, entry) => category.some(token => entry.message.toLowerCase().includes(token.toLowerCase()));
