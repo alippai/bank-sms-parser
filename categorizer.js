@@ -13,6 +13,7 @@ const utilities = [
     'KÖZÖS KÖLTSÉG',
     'GENERALI ',
     'ELMÜ-ÉMàSZ ',
+    'ELMUEMASZENERGIASZOLGA',
     'TàVHÖ',
     'Fötàv',
     'FEDEZETLENSÉGI KAMAT',
