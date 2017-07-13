@@ -14,6 +14,7 @@ const utilities = [
     'GENERALI ',
     'ELMÜ-ÉMàSZ ',
     'TàVHÖ',
+    'Fötàv',
     'FEDEZETLENSÉGI KAMAT',
     'Partner NAV Illetékek ',
     'BANKKàRTYàVAL KAPCS. DIJ',
