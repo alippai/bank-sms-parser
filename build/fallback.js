@@ -51,7 +51,9 @@ const utilities = [
     'KÖZÖS KÖLTSÉG',
     'GENERALI ',
     'ELMÜ-ÉMàSZ ',
+    'ELMUEMASZENERGIASZOLGA',
     'TàVHÖ',
+    'Fötàv',
     'FEDEZETLENSÉGI KAMAT',
     'Partner NAV Illetékek ',
     'BANKKàRTYàVAL KAPCS. DIJ',
@@ -59,6 +61,7 @@ const utilities = [
 ];
 const clothing = [
     'ZARA ',
+    'ZARA.',
     'TIZPRBA ',
     'PULL ',
     'H&M',
@@ -83,6 +86,7 @@ const shopping = [
     'GREEN PAPIR',
     'KREATIV HOBBY ',
     'IKEA',
+    'OBI',
     'MEDIA MARKT',
     'INMEDIO ',
     'BESTON-OTTHON',
