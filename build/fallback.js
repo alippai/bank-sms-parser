@@ -37,7 +37,7 @@ var parser = function (message) {
 };
 
 const groceries = ['SPAR', 'TESCO', 'CO-OP', 'LIDL', 'CBA ', 'Mazsa Kalvin', 'BORTàRSASàG ', 'DARLINGTON TEABOLT', 'CULINARIS'];
-const healthcare = ['PATIKA', 'GY.TàR', 'GYòGYSZERTàR', 'GYOGYSZERTAR'];
+const healthcare = ['PATIKA', 'GY.TàR', 'GYòGYSZERTàR', 'GYOGYSZERTAR', 'DATA-OBJECT BT'];
 const cash = ['ATM '];
 const utilities = [
   'Google storage',
