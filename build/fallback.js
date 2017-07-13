@@ -37,7 +37,7 @@ var parser = function (message) {
 };
 
 const groceries = ['SPAR', 'TESCO', 'CO-OP', 'LIDL', 'CBA ', 'Mazsa Kalvin', 'BORTàRSASàG ', 'DARLINGTON TEABOLT', 'CULINARIS'];
-const healthcare = ['PATIKA', 'GY.TàR', 'GYòGYSZERTàR', 'GYOGYSZERTAR', 'DATA-OBJECT BT'];
+const healthcare = ['PATIKA', 'GY.TàR', 'GYòGYSZERTàR', 'GYOGYSZERTAR', 'DATA-OBJECT BT', 'VISION EXPRES'];
 const cash = ['ATM '];
 const utilities = [
   'Google storage',
@@ -92,11 +92,9 @@ const shopping = [
   'BESTON-OTTHON',
   'JYSK ',
   'BUDAPEST KIRàLY U.52.',
-  'VISION EXPRES',
   'EMAG.HU',
-  'Speed-Way',
-  'ALPINBIKE',
 ];
+const sports = [ 'Speed-Way', 'ALPINBIKE' ];
 const travel = ['M?V', 'Máv ', 'MàV'];
 const entertainment = ['CINEMA CITY', 'INTERTICKET '];
 const travel_savings = ['Közl UTAZàS'];
@@ -142,6 +140,7 @@ var categorizer = function (entry) {
   if (categoryMatch(safety_savings, entry)) entry.category = 'Safety savings';
   if (categoryMatch(personal_care, entry)) entry.category = 'Personal care';
   if (categoryMatch(restaurant, entry)) entry.category = 'Restaurant';
+  if (categoryMatch(sports, entry)) entry.category = 'Sports';
   return entry;
 };
 
@@ -158,6 +157,7 @@ const base = {
   'Safety savings': {},
   'Personal care': {},
   Restaurant: {},
+  Sports: {},
   Other: {},
 };
 
@@ -223,77 +223,80 @@ var drawTimeChart = function (withCategory) {
 };
 
 var drawPieChart = function (withCategory) {
-    Highcharts.chart('chart', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'All'
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.y:.0f}</b> ({point.percentage:.1f}%)'
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: true,
-                    format: '<b>{point.name}</b>',
-                    style: {
-                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Expenses',
-            colorByPoint: true,
-            data: [{
-                name: 'Groceries',
-                y: -1 * withCategory.filter(x => x.category === 'Groceries').reduce((prev, curr) => prev + curr.amount, 0),
-            }, {
-                name: 'Healthcare',
-                y: -1 * withCategory.filter(x => x.category === 'Healthcare').reduce((prev, curr) => prev + curr.amount, 0),
-            }, {
-                name: 'Cash',
-                y: -1 * withCategory.filter(x => x.category === 'Cash').reduce((prev, curr) => prev + curr.amount, 0),
-            }, {
-                name: 'Entertainment',
-                y: -1 * withCategory.filter(x => x.category === 'Entertainment').reduce((prev, curr) => prev + curr.amount, 0),
-            }, {
-                name: 'Utilities',
-                y: -1 * withCategory.filter(x => x.category === 'Utilities').reduce((prev, curr) => prev + curr.amount, 0),
-            }, {
-                name: 'Travel',
-                y: -1 * withCategory.filter(x => x.category === 'Travel').reduce((prev, curr) => prev + curr.amount, 0),
-            }, {
-                name: 'Shopping',
-                y: -1 * withCategory.filter(x => x.category === 'Shopping').reduce((prev, curr) => prev + curr.amount, 0),
-            }, {
-                name: 'Travel savings',
-                y: -1 * withCategory.filter(x => x.category === 'Travel savings').reduce((prev, curr) => prev + curr.amount, 0),
-            }, {
-                name: 'Safety savings',
-                y: -1 * withCategory.filter(x => x.category === 'Safety savings').reduce((prev, curr) => prev + curr.amount, 0),
-            }, {
-                name: 'Personal care',
-                y: -1 * withCategory.filter(x => x.category === 'Safety savings').reduce((prev, curr) => prev + curr.amount, 0),
-            }, {
-                name: 'Restaurant',
-                y: -1 * withCategory.filter(x => x.category === 'Restaurant').reduce((prev, curr) => prev + curr.amount, 0),
-            }, {
-                name: 'Clothing',
-                y: -1 * withCategory.filter(x => x.category === 'Clothing').reduce((prev, curr) => prev + curr.amount, 0),
-            }, {
-                name: 'Other',
-                y: -1 * withCategory.filter(x => x.category === undefined && x.amount < 0).reduce((prev, curr) => prev + curr.amount, 0),
-            }]
-        }]
-    });
+  Highcharts.chart('chart', {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: 'pie'
+    },
+    title: {
+      text: 'All'
+    },
+    tooltip: {
+      pointFormat: '{series.name}: <b>{point.y:.0f}</b> ({point.percentage:.1f}%)'
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: 'pointer',
+        dataLabels: {
+          enabled: true,
+          format: '<b>{point.name}</b>',
+          style: {
+            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+          }
+        }
+      }
+    },
+    series: [{
+      name: 'Expenses',
+      colorByPoint: true,
+      data: [{
+        name: 'Groceries',
+        y: -1 * withCategory.filter(x => x.category === 'Groceries').reduce((prev, curr) => prev + curr.amount, 0),
+      }, {
+        name: 'Healthcare',
+        y: -1 * withCategory.filter(x => x.category === 'Healthcare').reduce((prev, curr) => prev + curr.amount, 0),
+      }, {
+        name: 'Cash',
+        y: -1 * withCategory.filter(x => x.category === 'Cash').reduce((prev, curr) => prev + curr.amount, 0),
+      }, {
+        name: 'Entertainment',
+        y: -1 * withCategory.filter(x => x.category === 'Entertainment').reduce((prev, curr) => prev + curr.amount, 0),
+      }, {
+        name: 'Utilities',
+        y: -1 * withCategory.filter(x => x.category === 'Utilities').reduce((prev, curr) => prev + curr.amount, 0),
+      }, {
+        name: 'Travel',
+        y: -1 * withCategory.filter(x => x.category === 'Travel').reduce((prev, curr) => prev + curr.amount, 0),
+      }, {
+        name: 'Shopping',
+        y: -1 * withCategory.filter(x => x.category === 'Shopping').reduce((prev, curr) => prev + curr.amount, 0),
+      }, {
+        name: 'Travel savings',
+        y: -1 * withCategory.filter(x => x.category === 'Travel savings').reduce((prev, curr) => prev + curr.amount, 0),
+      }, {
+        name: 'Safety savings',
+        y: -1 * withCategory.filter(x => x.category === 'Safety savings').reduce((prev, curr) => prev + curr.amount, 0),
+      }, {
+        name: 'Personal care',
+        y: -1 * withCategory.filter(x => x.category === 'Safety savings').reduce((prev, curr) => prev + curr.amount, 0),
+      }, {
+        name: 'Restaurant',
+        y: -1 * withCategory.filter(x => x.category === 'Restaurant').reduce((prev, curr) => prev + curr.amount, 0),
+      }, {
+        name: 'Clothing',
+        y: -1 * withCategory.filter(x => x.category === 'Clothing').reduce((prev, curr) => prev + curr.amount, 0),
+      }, {
+        name: 'Sports',
+        y: -1 * withCategory.filter(x => x.category === 'Sports').reduce((prev, curr) => prev + curr.amount, 0),
+      }, {
+        name: 'Other',
+        y: -1 * withCategory.filter(x => x.category === undefined && x.amount < 0).reduce((prev, curr) => prev + curr.amount, 0),
+      }]
+    }]
+  });
 };
 
 const t10table = document.getElementById('top10');

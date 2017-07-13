@@ -1,5 +1,5 @@
 const groceries = ['SPAR', 'TESCO', 'CO-OP', 'LIDL', 'CBA ', 'Mazsa Kalvin', 'BORTàRSASàG ', 'DARLINGTON TEABOLT', 'CULINARIS'];
-const healthcare = ['PATIKA', 'GY.TàR', 'GYòGYSZERTàR', 'GYOGYSZERTAR', 'DATA-OBJECT BT'];
+const healthcare = ['PATIKA', 'GY.TàR', 'GYòGYSZERTàR', 'GYOGYSZERTAR', 'DATA-OBJECT BT', 'VISION EXPRES'];
 const cash = ['ATM '];
 const utilities = [
   'Google storage',
@@ -54,11 +54,9 @@ const shopping = [
   'BESTON-OTTHON',
   'JYSK ',
   'BUDAPEST KIRàLY U.52.',
-  'VISION EXPRES',
   'EMAG.HU',
-  'Speed-Way',
-  'ALPINBIKE',
 ];
+const sports = [ 'Speed-Way', 'ALPINBIKE' ];
 const travel = ['M?V', 'Máv ', 'MàV'];
 const entertainment = ['CINEMA CITY', 'INTERTICKET '];
 const travel_savings = ['Közl UTAZàS'];
@@ -104,5 +102,6 @@ export default function (entry) {
   if (categoryMatch(safety_savings, entry)) entry.category = 'Safety savings';
   if (categoryMatch(personal_care, entry)) entry.category = 'Personal care';
   if (categoryMatch(restaurant, entry)) entry.category = 'Restaurant';
+  if (categoryMatch(sports, entry)) entry.category = 'Sports';
   return entry;
 }

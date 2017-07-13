@@ -11,6 +11,7 @@ const base = {
   'Safety savings': {},
   'Personal care': {},
   Restaurant: {},
+  Sports: {},
   Other: {},
 };
 
