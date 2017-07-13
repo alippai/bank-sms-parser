@@ -61,7 +61,7 @@ const shopping = [
   'EMAG.HU',
   'WWW.EDIGITAL.HU',
 ];
-const sports = [ 'Speed-Way', 'ALPINBIKE', 'Radwelt' ];
+const sports = [ 'Speed-Way', 'ALPINBIKE', 'Radwelt', 'FITNESS' ];
 const travel = ['M?V', 'Máv ', 'MàV', 'Lokalbah', 'MINIBUD'];
 const entertainment = ['CINEMA CITY', 'INTERTICKET ', 'Spotify', 'cinemacity'];
 const travel_savings = ['Közl UTAZàS'];
