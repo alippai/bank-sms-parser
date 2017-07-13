@@ -177,8 +177,8 @@ var drawTimeChart = function (withCategory) {
     for (const e of Object.values(base[c])) {
       data.push(e);
     }
-    return { name: c, data };
-  }).filter(x => x.name !== 'Other');
+    return { name: c, data, visible: c !== 'Other' };
+  });
   Highcharts.chart('timechart', {
     chart: {
       type: 'area'
