@@ -2,6 +2,7 @@ import parser from './parser.js';
 import categorizer from './categorizer.js';
 import drawTimeChart from './timechart.js';
 import drawPieChart from './piechart.js';
+import drawBucketChart from './bucketchart.js';
 import renderTableTop10 from './top10.js';
 import renderTableAll from './all_table.js';
 import googleApi from './gapi.js';
@@ -44,4 +45,5 @@ async function init() {
     renderTableAll(parsed);
     renderTableTop10(withCategory);
     drawPieChart(withCategory);
+    drawBucketChart(withCategory);
 }
