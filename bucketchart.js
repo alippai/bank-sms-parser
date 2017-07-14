@@ -1,10 +1,7 @@
 export default function (withCategory) {
   Highcharts.chart('bucketchart', {
     chart: {
-      plotBackgroundColor: null,
-      plotBorderWidth: null,
-      plotShadow: false,
-      type: 'bar'
+      type: 'column'
     },
     title: {
       text: 'All'
