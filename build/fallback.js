@@ -314,26 +314,13 @@ var drawBucketChart = function (withCategory) {
       plotBackgroundColor: null,
       plotBorderWidth: null,
       plotShadow: false,
-      type: 'pie'
+      type: 'bar'
     },
     title: {
       text: 'All'
     },
     tooltip: {
       pointFormat: '{series.name}: <b>{point.y:.0f}</b> ({point.percentage:.1f}%)'
-    },
-    plotOptions: {
-      pie: {
-        allowPointSelect: true,
-        cursor: 'pointer',
-        dataLabels: {
-          enabled: true,
-          format: '<b>{point.name}</b>',
-          style: {
-            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-          }
-        }
-      }
     },
     series: [{
       name: 'Expenses',
