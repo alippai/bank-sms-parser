@@ -319,6 +319,15 @@ var drawBucketChart = function (withCategory) {
     tooltip: {
       pointFormat: '{series.name}: <b>{point.y:.0f}</b> ({point.percentage:.1f}%)'
     },
+    plotOptions: {
+      column: {
+        stacking: 'normal',
+        dataLabels: {
+          enabled: true,
+          color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+        }
+      }
+    },
     series: [{
       name: 'Expenses',
       colorByPoint: true,
