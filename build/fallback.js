@@ -614,16 +614,18 @@ var idbKeyval = {
 };
 
 var getAllMessages = async function(messageIds) {
-  const result = [];
   const messagesToGet = [];
-  for (const messageId of messageIds) {
-    const message = await idbKeyval.get(messageId.id);
-    if (message === undefined) {
-      messagesToGet.push(messageId);
-    } else {
-      result.push(message);
-    }
-  }
+  const result = await Promise.all(
+    messageIds.map(messageId =>
+      idbKeyval.get(messageId.id).then(message => {
+        if (message === undefined) {
+          messagesToGet.push(messageId);
+        } else {
+          return message;
+        }
+      }),
+    ),
+  );
 
   const getResult = await Promise.all(
     messagesToGet.map(message => {
@@ -640,7 +642,7 @@ var getAllMessages = async function(messageIds) {
       );
     }),
   );
-  return [...result, ...getResult];
+  return [...result.filter(message => message !== undefined), ...getResult];
 };
 
 googleApi(init);

@@ -1,16 +1,18 @@
 import cache from './idb.js';
 
 export default async function(messageIds) {
-  const result = [];
   const messagesToGet = [];
-  for (const messageId of messageIds) {
-    const message = await cache.get(messageId.id);
-    if (message === undefined) {
-      messagesToGet.push(messageId);
-    } else {
-      result.push(message);
-    }
-  }
+  const result = await Promise.all(
+    messageIds.map(messageId =>
+      cache.get(messageId.id).then(message => {
+        if (message === undefined) {
+          messagesToGet.push(messageId);
+        } else {
+          return message;
+        }
+      }),
+    ),
+  );
 
   const getResult = await Promise.all(
     messagesToGet.map(message => {
@@ -27,5 +29,5 @@ export default async function(messageIds) {
       );
     }),
   );
-  return [...result, ...getResult];
+  return [...result.filter(message => message !== undefined), ...getResult];
 }
