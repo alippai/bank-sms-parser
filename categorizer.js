@@ -57,6 +57,7 @@ const shopping = [
   'INMEDIO ',
   'BESTON-OTTHON',
   'JYSK ',
+  'ZARAHOME.COM',
   'BUDAPEST KIRàLY U.52.',
   'EMAG.HU',
   'WWW.EDIGITAL.HU',
