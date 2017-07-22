@@ -74,7 +74,7 @@ var idbKeyval = {
     }).then(function() {
       return keys;
     });
-  }
+  },
 };
 
 export default idbKeyval;

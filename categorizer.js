@@ -1,4 +1,14 @@
-const groceries = ['SPAR', 'TESCO', 'CO-OP', 'LIDL', 'CBA ', 'Mazsa Kalvin', 'BORTàRSASàG ', 'DARLINGTON TEABOLT', 'CULINARIS'];
+const groceries = [
+  'SPAR',
+  'TESCO',
+  'CO-OP',
+  'LIDL',
+  'CBA ',
+  'Mazsa Kalvin',
+  'BORTàRSASàG ',
+  'DARLINGTON TEABOLT',
+  'CULINARIS',
+];
 const healthcare = ['PATIKA', 'GY.TàR', 'GYòGYSZERTàR', 'GYOGYSZERTAR', 'DATA-OBJECT BT', 'VISION EXPRES'];
 const cash = ['ATM '];
 const utilities = [
@@ -62,7 +72,7 @@ const shopping = [
   'EMAG.HU',
   'WWW.EDIGITAL.HU',
 ];
-const sports = [ 'Speed-Way', 'ALPINBIKE', 'Radwelt', 'FITNESS' ];
+const sports = ['Speed-Way', 'ALPINBIKE', 'Radwelt', 'FITNESS'];
 const travel = ['M?V', 'Máv ', 'MàV', 'Lokalbah', 'MINIBUD'];
 const entertainment = ['CINEMA CITY', 'INTERTICKET ', 'Spotify', 'cinemacity'];
 const travel_savings = ['Közl UTAZàS'];
@@ -97,9 +107,10 @@ const restaurant = [
   'COSTA COFFEE',
 ];
 
-const categoryMatch = (category, entry) => category.some(token => entry.message.toLowerCase().includes(token.toLowerCase()));
+const categoryMatch = (category, entry) =>
+  category.some(token => entry.message.toLowerCase().includes(token.toLowerCase()));
 
-export default function (entry) {
+export default function(entry) {
   if (categoryMatch(groceries, entry)) entry.category = 'Groceries';
   if (categoryMatch(healthcare, entry)) entry.category = 'Healthcare';
   if (categoryMatch(cash, entry)) entry.category = 'Cash';

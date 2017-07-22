@@ -15,7 +15,7 @@ const base = {
   Other: {},
 };
 
-export default function (withCategory) {
+export default function(withCategory) {
   const forTimeChart = withCategory.reduce((acc, entry) => {
     const category = entry.category === undefined ? 'Other' : entry.category;
     const month = entry.date.substring(0, 7);
@@ -35,31 +35,31 @@ export default function (withCategory) {
   });
   Highcharts.chart('timechart', {
     chart: {
-      type: 'area'
+      type: 'area',
     },
     title: {
-      text: 'Expenses by month'
+      text: 'Expenses by month',
     },
     xAxis: {
       categories: Object.keys(forTimeChart.Other),
       tickmarkPlacement: 'on',
       title: {
-        enabled: false
-      }
+        enabled: false,
+      },
     },
     yAxis: {
       title: {
-        text: 'eFt'
+        text: 'eFt',
       },
       labels: {
-        formatter: function () {
+        formatter: function() {
           return this.value / 1000;
-        }
-      }
+        },
+      },
     },
     tooltip: {
       split: true,
-      valueSuffix: ' Ft'
+      valueSuffix: ' Ft',
     },
     plotOptions: {
       area: {
@@ -68,9 +68,9 @@ export default function (withCategory) {
         lineWidth: 1,
         marker: {
           lineWidth: 1,
-          lineColor: '#666666'
-        }
-      }
+          lineColor: '#666666',
+        },
+      },
     },
     series,
   });
