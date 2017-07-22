@@ -13,7 +13,7 @@ export default async function(messageIds) {
   }
 
   const getResult = await Promise.all(
-    messageIds.map(message => {
+    messagesToGet.map(message => {
       return new Promise(resolve =>
         gapi.client.gmail.users.messages
           .get({
