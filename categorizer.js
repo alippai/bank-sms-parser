@@ -76,7 +76,7 @@ const shopping = [
 ];
 const sports = ['Speed-Way', 'ALPINBIKE', 'Radwelt', 'FITNESS'];
 const travel = ['M?V', 'Máv ', 'MàV', 'Lokalbah', 'MINIBUD'];
-const entertainment = ['CINEMA CITY', 'INTERTICKET ', 'Spotify', 'cinemacity', 'HOTEL PEST KFT'];
+const entertainment = ['CINEMA CITY', 'INTERTICKET ', 'Spotify', 'cinemacity', 'HOTEL PEST KFT', 'SIMPLE'];
 const travel_savings = ['Közl UTAZàS'];
 const safety_savings = ['Közl BIZTONSàG'];
 const personal_care = ['ROSSMANN ', 'DM ', 'Mueller ', 'Harmonia Reformhaz', 'DOUGLAS ', 'TINAMU ', 'BARBER SHOP'];
