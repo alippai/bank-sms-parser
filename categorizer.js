@@ -35,6 +35,7 @@ const utilities = [
 ];
 const clothing = [
   'ZARA ',
+  'Zara,',
   'ZARA.',
   'TIZPRBA ',
   'PULL ',
@@ -48,6 +49,7 @@ const clothing = [
   'TEZENIS',
   'Humanic',
   'DRESSMANN',
+  'HM.COM',
 ];
 const shopping = [
   'PAYPAL',
@@ -74,7 +76,7 @@ const shopping = [
 ];
 const sports = ['Speed-Way', 'ALPINBIKE', 'Radwelt', 'FITNESS'];
 const travel = ['M?V', 'Máv ', 'MàV', 'Lokalbah', 'MINIBUD'];
-const entertainment = ['CINEMA CITY', 'INTERTICKET ', 'Spotify', 'cinemacity'];
+const entertainment = ['CINEMA CITY', 'INTERTICKET ', 'Spotify', 'cinemacity', 'HOTEL PEST KFT'];
 const travel_savings = ['Közl UTAZàS'];
 const safety_savings = ['Közl BIZTONSàG'];
 const personal_care = ['ROSSMANN ', 'DM ', 'Mueller ', 'Harmonia Reformhaz', 'DOUGLAS ', 'TINAMU ', 'BARBER SHOP'];
@@ -105,6 +107,7 @@ const restaurant = [
   'SZENDVICS DELIKAT KFT.',
   'CAFE FREI',
   'COSTA COFFEE',
+  'DUNA TOWER',
 ];
 
 const categoryMatch = (category, entry) =>
